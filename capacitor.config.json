@@ -1,0 +1,11 @@
+{
+  "appId": "com.baihaiyai.dentalimpression",
+  "appName": "口腔印模虚拟实训",
+  "webDir": "dist-mobile",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

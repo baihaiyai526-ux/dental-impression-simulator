@@ -23,6 +23,16 @@ npm run build:static
 
 仓库中的 `.github/workflows/deploy-pages.yml` 会在 `main` 分支更新后自动构建并发布 GitHub Pages。PWA 和 GLB 模型资源会根据仓库名称自动使用正确的基础路径。
 
+## Android APK
+
+项目使用 Capacitor 封装 Android 应用。准备好项目内 `.tooling` 目录中的 JDK 21 和 Android SDK API 36 后运行：
+
+```bash
+npm run android:apk
+```
+
+可直接安装的调试 APK 会生成到 `artifacts/dental-impression-training-debug.apk`。
+
 ## 模型文件
 
 GLB 模型放置在 `public/models`。替换模型时请保留代码中使用的文件名，或同步修改模型配置。

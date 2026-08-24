@@ -1,6 +1,10 @@
 node_modules/
+.tooling/
 dist/
 dist-github/
+dist-mobile/
 artifacts/
+android/.gradle/
+android/app/build/
 *.log
 .DS_Store

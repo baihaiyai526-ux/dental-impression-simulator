@@ -2,14 +2,16 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { VitePWA } from "vite-plugin-pwa";
 
-export default defineConfig(() => {
-  const base = process.env.VITE_BASE_PATH || "/";
+export default defineConfig(({ mode }) => {
+  const isMobileBuild = mode === "mobile";
+  const base = isMobileBuild ? "./" : process.env.VITE_BASE_PATH || "/";
 
   return {
     base,
     plugins: [
       react(),
       VitePWA({
+        disable: isMobileBuild,
         registerType: "autoUpdate",
         injectRegister: "auto",
         includeAssets: ["icons/apple-touch-icon.png"],

@@ -5,9 +5,14 @@
     "build": "node scripts/build-sites.mjs",
     "build:static": "vite build",
     "build:github": "vite build --outDir dist-github",
+    "build:mobile": "vite build --mode mobile --outDir dist-mobile",
+    "android:sync": "npm run build:mobile && cap sync android",
+    "android:apk": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-android-apk.ps1",
     "preview": "vite preview --host 127.0.0.1 --outDir dist/client"
   },
   "dependencies": {
+    "@capacitor/android": "^8.5.0",
+    "@capacitor/core": "^8.5.0",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.6.1",
     "@vitejs/plugin-react": "latest",
@@ -18,6 +23,7 @@
     "vite": "latest"
   },
   "devDependencies": {
+    "@capacitor/cli": "^8.5.0",
     "@tailwindcss/postcss": "latest",
     "autoprefixer": "latest",
     "postcss": "latest",
